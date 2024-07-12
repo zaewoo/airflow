@@ -4,7 +4,7 @@ import datetime
 from airflow.operators.bash import BashOperator
 
 with DAG(
-    dag_id="dags_bash_select_fruit",
+    dag_id="dags_bash_with_template",
     schedule="10 0 * * *",
     start_date=pendulum.datetime(2024, 3, 1, tz="Asia/Seoul"),
     catchup=False
