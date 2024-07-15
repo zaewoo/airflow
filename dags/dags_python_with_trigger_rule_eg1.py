@@ -22,7 +22,7 @@ with DAG(
     def python_upstream_1():
         raise AirflowException('downstream_1 Exception!')
     
-    @task(task_id='pytohn_upstream_2')
+    @task(task_id='python_upstream_2')
     def python_upstream_2():
         print('정상 처리')
     
