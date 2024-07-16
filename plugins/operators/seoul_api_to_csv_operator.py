@@ -1,5 +1,4 @@
 import pandas as pd
-
 from airflow.models.baseoperator import BaseOperator
 from airflow.hooks.base import BaseHook
 
@@ -50,7 +49,7 @@ class SeoulApiToCsvOperator(BaseOperator):
         
         request_url = f'{base_url}/{start_row}/{end_row}/'
         if self.base_dt is not None:
-            requests_ur = f'{base_url}/{start_row}/{end_row}/{self.base_dt}'
+            request_url = f'{base_url}/{start_row}/{end_row}/{self.base_dt}'
         response = requests.get(request_url, headers)
         contents = json.loads(response.text)
 
