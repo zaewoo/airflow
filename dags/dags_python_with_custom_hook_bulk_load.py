@@ -17,7 +17,7 @@ with DAG(
     insrt_postgres=PythonOperator(
         task_id='insrt_postgres',
         python_callable=insrt_postgres,
-        op_kwargs={'postgres_conn_id':'conn_db-postgres-custom',
+        op_kwargs={'postgres_conn_id':'conn-db-postgres-custom',
                    'tbl_nm':'TbCorona19CountStatus_bulk2',
                    'file_nm':'/opt/airflow/files/TbCorona19CountStatus/20240716/TbCorona19CountStatus.csv'}
     )
