@@ -1,5 +1,4 @@
 import pendulum
-from dateutil import relativedelta
 from airflow import DAG
 from airflow.operators.python import PythonOperator
 from airflow.providers.postgres.hooks.postgres import PostgresHook
@@ -20,5 +19,5 @@ with DAG(
         python_callable=insrt_postgres,
         op_kwargs={'postgres_conn_id':'conn-db-postgres-custom',
                    'tbl_nm':'TbCorona19CountStatus_bulk1',
-                   'file_nm':'/opt/airflow/files/TbCorona19CountStatus/{{ data_interval_end.in_timezone("Asia/Seoul") + relativedelta.relativedelta(days=-1) | ds_nodash }}/TbCorona19CountStatus.csv'}
+                   'file_nm':'/opt/airflow/files/TbCorona19CountStatus/20240716/TbCorona19CountStatus.csv'}
     )
