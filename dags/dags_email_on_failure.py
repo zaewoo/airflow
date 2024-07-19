@@ -33,6 +33,6 @@ with DAG(
     )
     
     bash_success=BashOperator(
-        task_id='bash_fail',
+        task_id='bash_success',
         bash_command='exit 0',
     )
